@@ -78,75 +78,117 @@ exports.apigClientFactory.newClient = function (config) {
         defaultAcceptType: config.defaultAcceptType
     };
     var apiGatewayClient = util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.apiGatewayClientFactory.newClient(simpleHttpClientConfig, sigV4ClientConfig);
-    apigClient.projectRefVersionsVersionRefGet = function (params, body, additionalParams) {
+    apigClient.configOptions = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
-        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['projectRef', 'versionRef'], ['body']);
-        var projectRefVersionsVersionRefGetRequest = {
-            verb: 'get'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['projectRef', 'versionRef'])),
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        var configOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate.parse('/config').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefGetRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(configOptionsRequest, authType, additionalParams, config.apiKey);
     };
-    apigClient.projectRefVersionsVersionRefPost = function (params, body, additionalParams) {
+    apigClient.configPrimaveraTablesGet = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
-        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['projectRef', 'versionRef'], ['body']);
-        var projectRefVersionsVersionRefPostRequest = {
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        var configPrimaveraTablesGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate.parse('/config/primavera-tables').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        return apiGatewayClient.makeRequest(configPrimaveraTablesGetRequest, authType, additionalParams, config.apiKey);
+    };
+    apigClient.configPrimaveraTablesOptions = function (params, body, additionalParams) {
+        if (additionalParams === undefined) {
+            additionalParams = {};
+        }
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        var configPrimaveraTablesOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate.parse('/config/primavera-tables').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        return apiGatewayClient.makeRequest(configPrimaveraTablesOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    apigClient.versionsVersionRefGet = function (params, body, additionalParams) {
+        if (additionalParams === undefined) {
+            additionalParams = {};
+        }
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['versionRef'], ['body']);
+        var versionsVersionRefGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['versionRef'])),
+            headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        return apiGatewayClient.makeRequest(versionsVersionRefGetRequest, authType, additionalParams, config.apiKey);
+    };
+    apigClient.versionsVersionRefPost = function (params, body, additionalParams) {
+        if (additionalParams === undefined) {
+            additionalParams = {};
+        }
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['versionRef'], ['body']);
+        var versionsVersionRefPostRequest = {
             verb: 'post'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['projectRef', 'versionRef'])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['versionRef'])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefPostRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefPostRequest, authType, additionalParams, config.apiKey);
     };
-    apigClient.projectRefVersionsVersionRefOptions = function (params, body, additionalParams) {
+    apigClient.versionsVersionRefOptions = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
         util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
-        var projectRefVersionsVersionRefOptionsRequest = {
+        var versionsVersionRefOptionsRequest = {
             verb: 'options'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefOptionsRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefOptionsRequest, authType, additionalParams, config.apiKey);
     };
-    apigClient.projectRefVersionsVersionRefSignedUrlGet = function (params, body, additionalParams) {
+    apigClient.versionsVersionRefSignedUrlGet = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
-        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['projectRef', 'versionRef'], ['body']);
-        var projectRefVersionsVersionRefSignedUrlGetRequest = {
+        util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, ['versionRef'], ['body']);
+        var versionsVersionRefSignedUrlGetRequest = {
             verb: 'get'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}/signed-url').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['projectRef', 'versionRef'])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}/signed-url').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, ['versionRef'])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefSignedUrlGetRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefSignedUrlGetRequest, authType, additionalParams, config.apiKey);
     };
-    apigClient.projectRefVersionsVersionRefSignedUrlOptions = function (params, body, additionalParams) {
+    apigClient.versionsVersionRefSignedUrlOptions = function (params, body, additionalParams) {
         if (additionalParams === undefined) {
             additionalParams = {};
         }
         util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
-        var projectRefVersionsVersionRefSignedUrlOptionsRequest = {
+        var versionsVersionRefSignedUrlOptionsRequest = {
             verb: 'options'.toUpperCase(),
-            path: pathComponent + uritemplate.parse('/{projectRef}/versions/{versionRef}/signed-url').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate.parse('/versions/{versionRef}/signed-url').expand(util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             queryParams: util_aws_apigateway_helpers_sdk_libs_1.apiGateway.core.utils.parseParametersToObject(params, []),
             body: body
         };
-        return apiGatewayClient.makeRequest(projectRefVersionsVersionRefSignedUrlOptionsRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(versionsVersionRefSignedUrlOptionsRequest, authType, additionalParams, config.apiKey);
     };
     return apigClient;
 };
